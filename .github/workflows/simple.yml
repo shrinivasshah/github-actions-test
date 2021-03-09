@@ -3,7 +3,7 @@ name: Shell Commands
 on: [push]
 
 jobs:
-  run-shell-comand:
+  run-shell-command:
     runs-on: ubuntu-latest
     steps:
       - name: echo a string
@@ -19,6 +19,7 @@ jobs:
         shell: python
   run-windows-commands:
     runs-on: windows-latest
+    needs: ['run_shell_command']
     steps:
       - name: Directory PowerShell
         run: Get-Location
